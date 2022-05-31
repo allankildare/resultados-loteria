@@ -1,0 +1,1 @@
+export { ContestLogo } from './ContestLogo'
