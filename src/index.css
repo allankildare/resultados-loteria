@@ -1,13 +1,22 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --light-gray: #EFEFEF;
+  --aside-and-megasena-green: #6BEFA3;
+  --quina-purple: #8666EF;
+  --lotofacil-pink: #DD7AC6;
+  --lotomania-orange: #FFAB64;
+  --timemania-green: #5AAD7D;
+  --dia-de-sorte-brownish-green: #BFAF83;
+
+  font-family: 'Montserrat', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  background-color: #6befa3;
 }
