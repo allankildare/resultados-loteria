@@ -1,5 +1,7 @@
 import { StyledSidebar } from './styles'
 import { ComboBox } from './../ComboBox/ComboBox'
+import { ContestText } from '../ContestText'
+import { ContestLogo } from '../ContestLogo'
 
 const options = [
     { text: 'Mega-Sena', value: 'mega_sena' },
@@ -14,6 +16,8 @@ export function Sidebar() {
     return (
         <StyledSidebar>
             <ComboBox options={options} />
+            <ContestLogo contest="Mega-sena" />
+            <ContestText />
         </StyledSidebar>
     )
 }
