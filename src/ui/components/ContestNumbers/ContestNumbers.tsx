@@ -1,10 +1,9 @@
 import { NumberBox } from '../NumberBox/NumberBox'
-import { ContestNumbersProvider, ContestNumbersContext } from './../../contexts'
 import { ContestBox, RoundedBox } from './styles'
 
 export function ContestNumbers() {
     return (
-        <ContestNumbersProvider>
+        <>
             <RoundedBox />
             <ContestBox>
                 <div className="numbers">
@@ -17,6 +16,6 @@ export function ContestNumbers() {
                 </div>
                 <p style={{ textAlign: 'center' }}>Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA</p>
             </ContestBox>
-        </ContestNumbersProvider>
+        </>
     )
 }
