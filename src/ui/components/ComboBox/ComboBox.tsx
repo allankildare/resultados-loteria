@@ -12,8 +12,10 @@ interface ComboBoxProps {
 }
 
 export function ComboBox({ options, selectedValue = 0 }: ComboBoxProps) {
+  const defaultValue = options[selectedValue].value
+
   return (
-    <Select>
+    <Select defaultValue={defaultValue}>
       <For
         of={options}
         render={(item, index) => {
@@ -21,7 +23,6 @@ export function ComboBox({ options, selectedValue = 0 }: ComboBoxProps) {
             <option
               key={`option${index}`}
               value={item.value}
-              selected={index === selectedValue}
             >
               {item.text}
             </option>
