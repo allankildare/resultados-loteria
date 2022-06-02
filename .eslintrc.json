@@ -23,6 +23,9 @@
     "rules": {
         "react/jsx-uses-react": "off",
         "react/react-in-jsx-scope": "off",
-        "eol-last": "error"
+        "eol-last": "error",
+        "no-trailing-spaces": ["error", {
+            "skipBlankLines": false
+        }]
     }
 }
