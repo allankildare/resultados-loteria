@@ -3,9 +3,12 @@ import App from './App'
 import './index.css'
 import { QueryClientProvider } from 'react-query'
 import { queryClient } from './clients'
+import { SelectedContestProvider } from './contexts/SelectedContestProvider'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
-    <App />
+    <SelectedContestProvider>
+      <App />
+    </SelectedContestProvider>
   </QueryClientProvider>
 )
