@@ -2,22 +2,31 @@ import { StyledSidebar } from './styles'
 import { ComboBox } from './../ComboBox/ComboBox'
 import { ContestText } from '../ContestText'
 import { ContestLogo } from '../ContestLogo'
+import { removeAccentsAndSpaces } from '../../../helpers'
+import { If } from 'react-extras'
 
-const options = [
-    { text: 'Mega-Sena', value: 'mega_sena' },
-    { text: 'Quina', value: 'quina' },
-    { text: 'Lotofacil', value: 'lotofacil' },
-    { text: 'Lotomania', value: 'lotomania' },
-    { text: 'Timemania', value: 'timemania' },
-    { text: 'Dia de Sorte', value: 'dia_de_sorte' }
-  ]
+interface Options {
+    id: number
+    nome: string
+}
 
-export function Sidebar() {
-    return (
-        <StyledSidebar>
-            <ComboBox options={options} />
-            <ContestLogo contest="Mega-sena" />
-            <ContestText />
-        </StyledSidebar>
-    )
+interface SidebarProps {
+    options: Options[]
+}
+
+export function Sidebar({ options } : SidebarProps) {
+  const formattedOptions = options?.map(item => {
+    const value = removeAccentsAndSpaces(item?.nome)
+    return { ...item, value }
+  })
+
+  return (
+    <StyledSidebar>
+      <If condition={Boolean(formattedOptions)}>
+        <ComboBox options={formattedOptions} />
+      </If>
+      <ContestLogo contest="Mega-sena" />
+      <ContestText />
+    </StyledSidebar>
+  )
 }
