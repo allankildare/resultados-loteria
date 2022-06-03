@@ -11,11 +11,11 @@ interface SelectedContest {
     id?: number
     ids?: IDs
     selectedContest: string
-    changeSelectedContest: (value: SelectValues) => void
+    changeSelectedContest: ({ value, id }: {value: SelectValues, id: number}) => void
 }
 
 export const SelectedContestContext = createContext<SelectedContest>({
     id: 0,
     selectedContest: 'mega-sena',
-    changeSelectedContest: (value) => 'first renderization'
+    changeSelectedContest: ({ value, id }) => `first renderization with value "${value}" and id ${id}.`
 })
