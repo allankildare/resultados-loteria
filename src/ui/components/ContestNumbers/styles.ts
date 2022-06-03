@@ -10,10 +10,10 @@ export const ContestBox = styled.main`
     .numbers {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
-
-    .numbers > div {
-        margin: 0 1rem;
+    .numbers div:last-child {
+        margin-right: 0;
     }
 `
 
@@ -22,5 +22,4 @@ export const RoundedBox = styled.div`
     width: 200px;
     height: 100vh;
     border-radius: 50% 0 0 50%;
-    // border: 1px solid black;
 `
