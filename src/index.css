@@ -18,5 +18,16 @@
 
 .container {
   display: flex;
-  background-color: #6befa3;
+}
+
+.debug {
+  border: 2px dotted red;
+}
+
+@keyframes rotateLoading {
+  from {
+    transform: rotate(0);
+  } to {
+    transform: rotate(360deg);
+  }
 }
