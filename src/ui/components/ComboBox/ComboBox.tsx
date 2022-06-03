@@ -23,8 +23,15 @@ export function ComboBox({ options, selectedValue = 0 }: ComboBoxProps) {
   )
   const { changeSelectedContest } = useContext(SelectedContestContext)
 
-  function handleContestChange({ target }: any) {
-    setSelectedContest(target.value)
+  function handleContestChange(event: any) {
+    const optionsNodes = Array.from(event.target.childNodes)
+    const valuesAndIds = optionsNodes.map((item, index) => {
+      const attributes = Array.from(item.attributes)
+      return { value: attributes[0].textContent, id: index }
+    })
+
+    const findValueAndId = valuesAndIds.find(element => element.value === event.target.value)
+    setSelectedContest({ ...findValueAndId })
   }
 
   useEffect(() => {
