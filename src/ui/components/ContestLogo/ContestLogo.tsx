@@ -5,7 +5,7 @@ export function ContestLogo({ contest }: { contest: string }) {
     return (
         <StyledContestLogo>
             <MegasenaIcon />
-            <span>Mega-Sena</span>
+            <span>{contest ? contest : 'mega-sena'}</span>
         </StyledContestLogo>
     )
 }
