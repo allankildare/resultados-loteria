@@ -1,4 +1,4 @@
-import { StyledSidebar } from './styles'
+import { StyledSidebar, CurvedBox } from './styles'
 import { ComboBox } from './../ComboBox/ComboBox'
 import { ContestText } from '../ContestText'
 import { ContestLogo } from '../ContestLogo'
@@ -35,6 +35,9 @@ export function Sidebar({ options }: SidebarProps) {
         <ContestLogo contest={selectedContest} />
         <ContestText />
       </StyledSidebar>
+      <CurvedBox selectedColor={contestColor}>
+        <div className="semiCircle" />
+      </CurvedBox>
     </>
   )
 }

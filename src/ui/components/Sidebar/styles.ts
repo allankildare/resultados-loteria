@@ -15,3 +15,18 @@ export const StyledSidebar = styled.aside`
   justify-content: space-between;
   color: #fff;
 `
+
+export const CurvedBox = styled.div`
+  background-color: ${({ selectedColor }: StyledSidebarProps) => selectedColor || 'var(--aside-and-megasena-green)'};
+  width: 150px;
+  display: flex;
+  justify-content: end;
+
+  & > .semiCircle {
+    width: 80%;
+    height: 100%;
+    background-color: var(--light-gray);
+    border-top-left-radius: 150px 100%;
+    border-bottom-left-radius: 150px 100%;
+  }
+`
