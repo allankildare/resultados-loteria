@@ -5,6 +5,7 @@ import { ContestNumbers } from './ui/components/ContestNumbers/ContestNumbers'
 import { Sidebar } from './ui/components/Sidebar/Sidebar'
 import { Choose } from 'react-extras'
 import { ApplicationLoading } from './ui/components'
+import { Flex } from './ui/components/layout-components'
 
 function App() {
   const {
@@ -19,10 +20,11 @@ function App() {
     isLoading: isContestsIdsLoading,
   } = getIds()
 
-  const isOptionsEmpty = Boolean(options) && (options.length === 0)
-  const isIdsEmpty = Boolean(contestsIds) && (contestsIds.length === 0)
+  const isOptionsEmpty = Boolean(options) && options.length === 0
+  const isIdsEmpty = Boolean(contestsIds) && contestsIds.length === 0
 
-  const successCondition = isOptionsSuccess && isContestsIdsSuccess && !isOptionsEmpty && !isIdsEmpty
+  const successCondition =
+    isOptionsSuccess && isContestsIdsSuccess && !isOptionsEmpty && !isIdsEmpty
 
   return (
     <div className="container">
@@ -32,19 +34,17 @@ function App() {
           <ContestNumbers ids={contestsIds} />
         </Choose.When>
         <Choose.When condition={isOptionsLoading || isContestsIdsLoading}>
-          <main
-            style={{
-              width: '100%',
-              height: '100vh',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'column',
-            }}
+          <Flex
+            as="main"
+            justifyContent="center"
+            alignItems="center"
+            flexDirection="column"
+            height="100vh"
+            width="100%"
           >
             <ApplicationLoading />
             <p>Carregando...</p>
-          </main>
+          </Flex>
         </Choose.When>
         <Choose.Otherwise>Carregando...</Choose.Otherwise>
       </Choose>
