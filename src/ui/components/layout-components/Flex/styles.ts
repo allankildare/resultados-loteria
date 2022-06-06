@@ -1,17 +1,12 @@
 import styled from 'styled-components'
+import type * as CSS from 'csstype'
 
-interface StyledFlexProps {
-  justifyContent: string
-  alignItems: string
-  flexDirection: 'row' | 'column'
-  wrap: string
-}
-
-export const StyledFlex = styled.div`
+export const StyledFlex = styled.div<CSS.Properties>`
   display: flex;
-  justify-content: ${({ justifyContent }: StyledFlexProps) =>
+  justify-content: ${({ justifyContent }) =>
     justifyContent || 'flex-start'};
-  flex-direction: ${({ flexDirection }: StyledFlexProps) =>
+  flex-direction: ${({ flexDirection }) =>
     flexDirection || 'row'};
-  flex-wrap: ${({ wrap }: StyledFlexProps) => wrap || 'row'};
+  flex-wrap: ${({ flexWrap }) => flexWrap || 'row'};
 `
+
