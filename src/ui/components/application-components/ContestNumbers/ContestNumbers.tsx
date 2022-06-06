@@ -5,17 +5,20 @@ import { getContest } from '~/services'
 import { ContestBox } from './styles'
 import { NumberBox } from './../NumberBox'
 import { ApplicationLoading } from './../ApplicationLoading'
+import { IdItem } from '~/types'
 
 export interface ContestNumbersProps {
-  numbers: string[]
+  ids: IdItem[]
 }
 
-export function ContestNumbers({ ids }: any) {
+export function ContestNumbers({ ids }: ContestNumbersProps) {
   const { selectedContest, selectedId } = useContext(SelectedContestContext)
+  console.log('ids\n', ids)
+
   const selectedContestId = ids.find(
     item => item.loteriaId === selectedId
   )?.concursoId
-  console.log('concurso selecionado', selectedContestId)
+
   const {
     data: contestData,
     isSuccess: isContestDataSuccess,
@@ -23,6 +26,7 @@ export function ContestNumbers({ ids }: any) {
     isRefetching: isContestDataRefetching,
     refetch: refetchContestData,
   } = getContest(selectedContestId)
+
   const loadingCondition = isContestDataLoading || isContestDataRefetching
 
   const contestNumbers = contestData?.numeros?.map(item => Number(item))

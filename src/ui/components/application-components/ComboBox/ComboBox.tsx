@@ -2,17 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { For } from 'react-extras'
 import { SelectedContestContext, SelectValues } from '~/contexts'
 import { Select } from './styles'
-
-interface Option {
-  id: number
-  nome: string
-  value: string
-}
-
-interface ComboBoxProps {
-  options: Option[]
-  selectedValue?: number
-}
+import { ComboBoxProps } from './interface'
 
 export function ComboBox({ options, selectedValue = 0 }: ComboBoxProps) {
   const defaultValue = options[selectedValue].value

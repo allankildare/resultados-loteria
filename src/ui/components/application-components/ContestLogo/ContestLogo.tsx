@@ -1,7 +1,8 @@
+import { ContestTypes } from '~/types'
 import { MegasenaIcon } from '~/ui/assets/icons'
 import { StyledContestLogo } from './styles'
 
-export function ContestLogo({ contest }: { contest: string }) {
+export function ContestLogo({ contest }: { contest: ContestTypes }) {
     return (
         <StyledContestLogo>
             <MegasenaIcon />

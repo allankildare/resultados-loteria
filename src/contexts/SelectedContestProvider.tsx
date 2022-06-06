@@ -1,20 +1,7 @@
 import { useState } from 'react'
-import { ContestTypes, SelectedContestContext } from './SelectedContestContext'
-
-export type SelectValues = 'mega_sena' | 'quina' | 'lotofacil' | 'lotomania' | 'timemania' | 'dia_de_sorte'
-
-function convertValueToSelectedContest(str: SelectValues) {
-    const possibleValues = {
-        mega_sena: 'mega-sena',
-        quina: 'quina',
-        lotofacil: 'lotofácil',
-        lotomania: 'lotomania',
-        timemania: 'timemania',
-        dia_de_sorte: 'dia de sorte'
-    }
-
-    return possibleValues[str] as ContestTypes
-}
+import { SelectedContestContext } from './SelectedContestContext'
+import { ContestTypes, SelectValues } from '~/types'
+import { convertValueToSelectedContest } from '~/helpers'
 
 export function SelectedContestProvider({ children }: any) {
     const [selectedContest, setSelectedContest] = useState<ContestTypes>('mega-sena')
