@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { For } from 'react-extras'
 import { SelectedContestContext, SelectValues } from '~/contexts'
 import { Select } from './styles'
@@ -12,8 +12,9 @@ export function ComboBox({ options, selectedValue = 0 }: ComboBoxProps) {
   )
   const { changeSelectedContest } = useContext(SelectedContestContext)
 
-  function handleContestChange(event: any) {
-    const optionsNodes = Array.from(event.target.childNodes)
+  function handleContestChange(event: ChangeEvent<HTMLSelectElement>) {
+    const optionsNodes = Array.from(event.target.children)
+
     const valuesAndIds = optionsNodes.map((item, index) => {
       const attributes = Array.from(item.attributes)
       return { value: attributes[0].textContent, id: index }
