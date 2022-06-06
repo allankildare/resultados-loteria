@@ -3,3 +3,9 @@ export interface IdItem {
     concursoId: string
 }
 
+export interface ContestData {
+    data: Date
+    id: string
+    loteria: number
+    numeros: string[]
+}
