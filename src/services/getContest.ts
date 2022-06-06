@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
-import { apiClient } from '../clients'
+import { apiClient } from '~/clients'
+import { ContestData } from '~/types'
 import { CONTEST_ENDPOINT } from './endpoints'
 
 export function getContest(id?: string) {
@@ -8,7 +9,8 @@ export function getContest(id?: string) {
   }, {
     enabled: Boolean(id)
   })
-  const response = data?.data
+
+  const response: ContestData = data?.data
 
   return { data: response, ...restQuery }
 }
