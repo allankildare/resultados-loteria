@@ -6,6 +6,7 @@ import { ContestBox } from './styles'
 import { NumberBox } from './../NumberBox'
 import { ApplicationLoading } from './../ApplicationLoading'
 import { IdItem } from '~/types'
+import { AlertText } from './../AlertText/AlertText'
 
 export interface ContestNumbersProps {
   ids: IdItem[]
@@ -24,6 +25,7 @@ export function ContestNumbers({ ids }: ContestNumbersProps) {
     isSuccess: isContestDataSuccess,
     isLoading: isContestDataLoading,
     isRefetching: isContestDataRefetching,
+    isError: isContestDataError,
     refetch: refetchContestData,
   } = getContest(selectedContestId)
 
@@ -32,30 +34,31 @@ export function ContestNumbers({ ids }: ContestNumbersProps) {
   const contestNumbers = contestData?.numeros?.map(item => Number(item))
 
   useEffect(() => {
-      refetchContestData()
+    refetchContestData()
   }, [selectedContestId])
 
   return (
     <>
       <ContestBox>
         <div className="numbers">
-            <Choose>
-                <Choose.When condition={isContestDataSuccess && Boolean(contestNumbers)}>
-                <For of={contestNumbers}
-                        render={(item, index) => {
-                            return <NumberBox key={`number${index}`} number={item} />
-                    }}
-                    />
-                </Choose.When>
-                <Choose.When condition={loadingCondition}>
-                    <ApplicationLoading />
-                </Choose.When>
-            </Choose>
-          {/* <For of={convertedNumbers}
-                        render={(item, index) => {
-                            return <NumberBox key={`number${index}`} number={item} />
-                    }}
-                    /> */}
+          <Choose>
+            <Choose.When condition={isContestDataError}>
+              <AlertText />
+            </Choose.When>
+            <Choose.When condition={loadingCondition}>
+              <ApplicationLoading />
+            </Choose.When>
+            <Choose.When
+              condition={isContestDataSuccess && Boolean(contestNumbers)}
+            >
+              <For
+                of={contestNumbers}
+                render={(item, index) => {
+                  return <NumberBox key={`number${index}`} number={item} />
+                }}
+              />
+            </Choose.When>
+          </Choose>
         </div>
         <p style={{ textAlign: 'center' }}>
           Este sorteio é meramente ilustrativo e não possui nenhuma ligação com
