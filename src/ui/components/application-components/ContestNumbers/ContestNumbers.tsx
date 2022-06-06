@@ -13,8 +13,7 @@ export interface ContestNumbersProps {
 }
 
 export function ContestNumbers({ ids }: ContestNumbersProps) {
-  const { selectedContest, selectedId } = useContext(SelectedContestContext)
-  console.log('ids\n', ids)
+  const { selectedId } = useContext(SelectedContestContext)
 
   const selectedContestId = ids.find(
     item => item.loteriaId === selectedId
