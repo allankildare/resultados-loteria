@@ -10,5 +10,7 @@ export function convertValueToSelectedContest(str: SelectValues) {
         dia_de_sorte: 'dia de sorte'
     }
 
-    return possibleValues[str] as ContestTypes
+    const convertedValue = possibleValues[str] ? possibleValues[str] : 'mega-sena'
+
+    return convertedValue as ContestTypes
 }

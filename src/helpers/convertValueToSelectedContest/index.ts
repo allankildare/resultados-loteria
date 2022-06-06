@@ -1,0 +1,1 @@
+export { convertValueToSelectedContest } from './convertValueToSelectedContest'
