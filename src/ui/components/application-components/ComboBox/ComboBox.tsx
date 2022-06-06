@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { For } from 'react-extras'
-import { SelectedContestContext } from '../../../contexts/SelectedContestContext'
-import { SelectValues } from '../../../contexts/SelectedContestProvider'
+import { SelectedContestContext, SelectValues } from '~/contexts'
 import { Select } from './styles'
 
 interface Option {

@@ -1,4 +1,4 @@
-import { MegasenaIcon } from '../../assets/icons'
+import { MegasenaIcon } from '~/ui/assets/icons'
 import { StyledContestLogo } from './styles'
 
 export function ContestLogo({ contest }: { contest: string }) {

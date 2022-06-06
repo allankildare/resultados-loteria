@@ -1,11 +1,12 @@
-import { StyledSidebar, CurvedBox } from './styles'
-import { ComboBox } from './../ComboBox/ComboBox'
-import { ContestText } from '../ContestText'
-import { ContestLogo } from '../ContestLogo'
-import { removeAccentsAndSpaces, translateContestColor } from '../../../helpers'
-import { If } from 'react-extras'
 import { useContext } from 'react'
-import { SelectedContestContext } from '../../../contexts/SelectedContestContext'
+import { If } from 'react-extras'
+import { StyledSidebar, CurvedBox } from './styles'
+import { SelectedContestContext } from '~/contexts'
+import { removeAccentsAndSpaces, translateContestColor } from '~/helpers'
+
+import { ComboBox } from './../ComboBox/ComboBox'
+import { ContestText } from './../ContestText'
+import { ContestLogo } from './../ContestLogo'
 
 interface Options {
   id: number

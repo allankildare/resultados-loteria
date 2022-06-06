@@ -1,10 +1,10 @@
-import { SelectedContestContext } from '../../../contexts/SelectedContestContext'
 import { useContext, useEffect } from 'react'
 import { Choose, For } from 'react-extras'
-import { getContest } from '../../../services'
-import { NumberBox } from '../NumberBox/NumberBox'
-import { ContestBox, RoundedBox } from './styles'
-import { ApplicationLoading } from '../ApplicationLoading'
+import { SelectedContestContext } from '~/contexts'
+import { getContest } from '~/services'
+import { ContestBox } from './styles'
+import { NumberBox } from './../NumberBox'
+import { ApplicationLoading } from './../ApplicationLoading'
 
 export interface ContestNumbersProps {
   numbers: string[]
@@ -33,7 +33,6 @@ export function ContestNumbers({ ids }: any) {
 
   return (
     <>
-      {/* <RoundedBox /> */}
       <ContestBox>
         <div className="numbers">
             <Choose>

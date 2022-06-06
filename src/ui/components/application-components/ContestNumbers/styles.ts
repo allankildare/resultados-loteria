@@ -16,10 +16,3 @@ export const ContestBox = styled.main`
         margin-right: 0;
     }
 `
-
-export const RoundedBox = styled.div`
-    background-color: var(--light-gray);
-    width: 200px;
-    height: 100vh;
-    border-radius: 50% 0 0 50%;
-`

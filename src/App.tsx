@@ -1,11 +1,7 @@
-import { getIds } from './services/getIds'
-import { getLotteries } from './services/getLotteries'
-
-import { ContestNumbers } from './ui/components/ContestNumbers/ContestNumbers'
-import { Sidebar } from './ui/components/Sidebar/Sidebar'
 import { Choose } from 'react-extras'
-import { ApplicationLoading } from './ui/components'
-import { Flex } from './ui/components/layout-components'
+
+import { getLotteries, getIds } from '~/services'
+import { ApplicationLoading, ContestNumbers, Sidebar, Flex } from '~/ui/components'
 
 function App() {
   const {
