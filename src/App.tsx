@@ -38,8 +38,7 @@ function App() {
             height="100vh"
             width="100%"
           >
-            <ApplicationLoading />
-            <p>Carregando...</p>
+            <ApplicationLoading message="Carregando..." />
           </Flex>
         </Choose.When>
         <Choose.Otherwise>Carregando...</Choose.Otherwise>
