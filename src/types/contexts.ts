@@ -8,8 +8,7 @@ export interface IDs {
 }
 
 export interface SelectedContest {
-    id?: number
-    ids?: IDs
+    selectedId?: number
     selectedContest: ContestTypes
     changeSelectedContest: ({ value, id }: {value: SelectValues, id: number}) => void
 }
