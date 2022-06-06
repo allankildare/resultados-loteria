@@ -26,7 +26,8 @@
         "eol-last": "error",
         "no-trailing-spaces": ["error", {
             "skipBlankLines": false
-        }]
+        }],
+        "@typescript-eslint/no-explicit-any": "off"
     },
     "settings": {
         "import/resolver": {
