@@ -1,5 +1,10 @@
 import { Loading } from './styles'
 
-export function ApplicationLoading() {
-    return <Loading />
+export function ApplicationLoading({ message }: { message?: string }) {
+  return (
+    <>
+      <Loading />
+      <p>{message}</p>
+    </>
+  )
 }
