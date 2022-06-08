@@ -1,0 +1,1 @@
+export { removeAccentsAndSpaces } from './removeAccentsAndSpaces'

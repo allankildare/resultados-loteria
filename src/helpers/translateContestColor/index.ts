@@ -1,0 +1,1 @@
+export { translateContestColor } from './translateContestColor'
