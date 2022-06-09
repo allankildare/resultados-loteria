@@ -13,7 +13,7 @@ export function AlertText(props: AlertTextProps) {
     const { message = DEFAULT_MESSAGE, as, color } = props
 
     return (
-        <StyledAlertText as={as} color={color}>
+        <StyledAlertText as={as} color={color} data-testid="alertText">
             {message}
         </StyledAlertText>
     )
