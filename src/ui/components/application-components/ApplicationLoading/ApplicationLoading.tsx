@@ -3,7 +3,7 @@ import { Loading } from './styles'
 export function ApplicationLoading({ message }: { message?: string }) {
   return (
     <>
-      <Loading />
+      <Loading data-testid="loading" />
       <p>{message}</p>
     </>
   )
