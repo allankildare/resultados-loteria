@@ -13,7 +13,7 @@ export interface ContestNumbersProps {
 }
 
 export function ContestNumbers({ ids }: ContestNumbersProps) {
-  const { selectedId } = useContext(SelectedContestContext)
+  const { selectedId, setSelectedContestId, setSelectedDate } = useContext(SelectedContestContext)
 
   const selectedContestId = ids.find(
     item => item.loteriaId === selectedId
@@ -31,10 +31,17 @@ export function ContestNumbers({ ids }: ContestNumbersProps) {
   const loadingCondition = isContestDataLoading || isContestDataRefetching
 
   const contestNumbers = contestData?.numeros?.map(item => Number(item))
+  const contestId = contestData?.id
+  const contestDate = contestData?.data
 
   useEffect(() => {
     refetchContestData()
   }, [selectedContestId])
+
+  useEffect(() => {
+    setSelectedContestId(contestId)
+    setSelectedDate(contestDate)
+  }, [contestId, contestDate])
 
   return (
     <>

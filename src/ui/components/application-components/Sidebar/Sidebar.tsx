@@ -18,7 +18,7 @@ interface SidebarProps {
 }
 
 export function Sidebar({ options }: SidebarProps) {
-  const { selectedContest } = useContext(SelectedContestContext)
+  const { selectedContest, selectedId, selectedContestId, selectedContestDate} = useContext(SelectedContestContext)
 
   const formattedOptions = options?.map(item => {
     const value = removeAccentsAndSpaces(item?.nome)
@@ -26,6 +26,7 @@ export function Sidebar({ options }: SidebarProps) {
   })
 
   const contestColor = translateContestColor(selectedContest)
+  console.log(selectedContestId)
 
   return (
     <>
@@ -34,7 +35,7 @@ export function Sidebar({ options }: SidebarProps) {
           <ComboBox options={formattedOptions} />
         </If>
         <ContestLogo contest={selectedContest} />
-        <ContestText />
+        <ContestText contestId={selectedContestId} contestDate={selectedContestDate} />
       </StyledSidebar>
       <CurvedBox selectedColor={contestColor}>
         <div className="semiCircle" />
