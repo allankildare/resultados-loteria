@@ -9,7 +9,7 @@ export function NumberBox({ number }: NumberBoxProps) {
     const formattedNumber = transformIntoTwoDigits(number)
 
     return (
-        <NumberBoxStyled>
+        <NumberBoxStyled data-testid="numberBox">
             {formattedNumber}
         </NumberBoxStyled>
     )
