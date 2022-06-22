@@ -10,5 +10,9 @@ export interface IDs {
 export interface SelectedContest {
     selectedId?: number
     selectedContest: ContestTypes
+    selectedContestDate: string
+    selectedContestId: string
     changeSelectedContest: ({ value, id }: {value: SelectValues, id: number}) => void
+    setSelectedContestId: ({ id }: { id: string }) => void
+    setSelectedContestDate: ({ date }: { date: Date }) => void
 }
