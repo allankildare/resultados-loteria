@@ -13,6 +13,6 @@ export interface SelectedContest {
     selectedContestDate: string
     selectedContestId: string
     changeSelectedContest: ({ value, id }: {value: SelectValues, id: number}) => void
-    setSelectedContestId: ({ id }: { id: string }) => void
-    setSelectedContestDate: ({ date }: { date: Date }) => void
+    setSelectedContestId: (id: string) => void
+    setSelectedContestDate: (date: string) => void
 }

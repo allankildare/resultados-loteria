@@ -7,7 +7,7 @@ export function SelectedContestProvider({ children }: any) {
     const [selectedContest, setSelectedContest] = useState<ContestTypes>('mega-sena')
     const [selectedId, setSelectedId] = useState(0)
     const [selectedContestId, setSelectedContestId] = useState('0')
-    const [selectedContestDate, setSelectedDate] = useState('1970-01-01T03:00:00.000Z')
+    const [selectedContestDate, setSelectedContestDate] = useState('1970-01-01T03:00:00.000Z')
 
     function changeSelectedContest({ value, id } : { value: SelectValues, id: number }) {
         const convertedValue = convertValueToSelectedContest(value)
@@ -16,7 +16,7 @@ export function SelectedContestProvider({ children }: any) {
     }
 
     return (
-        <SelectedContestContext.Provider value={{ selectedContest, selectedId, selectedContestDate, selectedContestId, changeSelectedContest, setSelectedContestId, setSelectedDate }}>
+        <SelectedContestContext.Provider value={{ selectedContest, selectedId, selectedContestDate, selectedContestId, changeSelectedContest, setSelectedContestId, setSelectedContestDate }}>
             {children}
         </SelectedContestContext.Provider>
     )
