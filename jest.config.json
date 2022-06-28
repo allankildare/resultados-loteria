@@ -1,17 +1,23 @@
 {
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect"
-    ],
-    "testMatch": [
-      "**/?(*.)spec.ts?(x)",
-      "**/?(*.)test.ts?(x)"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.json",
-        "diagnostics": false
-      }
-    },
-    "testEnvironment": "jsdom",
-    "preset": "ts-jest"
-  }
+  "moduleNameMapper": {
+    "~/(.*)": "<rootDir>/src/$1"
+  },
+  "transformIgnorePatterns": [
+    "/node_modules/(?!(react-extras)/)"
+  ],
+  "setupFilesAfterEnv": [
+    "@testing-library/jest-dom/extend-expect"
+  ],
+  "testMatch": [
+    "**/?(*.)spec.ts?(x)",
+    "**/?(*.)test.ts?(x)"
+  ],
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "tsconfig.json",
+      "diagnostics": false
+    }
+  },
+  "testEnvironment": "jsdom",
+  "preset": "ts-jest"
+}
