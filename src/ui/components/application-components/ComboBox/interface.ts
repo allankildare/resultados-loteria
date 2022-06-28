@@ -1,4 +1,4 @@
-interface Option {
+export interface Option {
   id: number
   nome: string
   value: string
