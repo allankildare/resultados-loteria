@@ -4,7 +4,7 @@ export interface IdItem {
 }
 
 export interface ContestData {
-    data: Date
+    data: string
     id: string
     loteria: number
     numeros: string[]
