@@ -13,7 +13,7 @@ export interface ContestNumbersProps {
 }
 
 export function ContestNumbers({ ids }: ContestNumbersProps) {
-  const { selectedId, setSelectedContestId, setSelectedDate } = useContext(SelectedContestContext)
+  const { selectedId, setSelectedContestId, setSelectedContestDate } = useContext(SelectedContestContext)
 
   const selectedContestId = ids.find(
     item => item.loteriaId === selectedId
@@ -40,7 +40,7 @@ export function ContestNumbers({ ids }: ContestNumbersProps) {
 
   useEffect(() => {
     setSelectedContestId(contestId)
-    setSelectedDate(contestDate)
+    setSelectedContestDate(contestDate)
   }, [contestId, contestDate])
 
   return (
