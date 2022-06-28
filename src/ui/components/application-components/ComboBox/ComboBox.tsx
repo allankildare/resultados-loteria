@@ -1,6 +1,7 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { For } from 'react-extras'
-import { SelectedContestContext, SelectValues } from '~/contexts'
+import { SelectedContestContext } from '~/contexts'
+import { SelectValues } from '~/types'
 import { Select } from './styles'
 import { ComboBoxProps } from './interface'
 
