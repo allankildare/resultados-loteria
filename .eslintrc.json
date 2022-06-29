@@ -35,6 +35,9 @@
                 "map": [["~", "./src/"]],
                 "extensions": [".ts", ".js", ".tsx"]
             }
+        },
+        "react": {
+            "version": "detect"
         }
     }
 }
