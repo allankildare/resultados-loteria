@@ -1,3 +1,5 @@
+import { SelectValues } from '~/types'
+
 export interface Option {
   id: number
   nome: string
@@ -7,4 +9,9 @@ export interface Option {
 export interface ComboBoxProps {
   options: Option[]
   selectedValue?: number
+}
+
+export interface ValueAndID {
+  value: SelectValues
+  id: number
 }

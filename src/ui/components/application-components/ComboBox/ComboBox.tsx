@@ -3,14 +3,13 @@ import { For } from 'react-extras'
 import { SelectedContestContext } from '~/contexts'
 import { SelectValues } from '~/types'
 import { Select } from './styles'
-import { ComboBoxProps } from './interface'
+import { ComboBoxProps, ValueAndID } from './interface'
 
 export function ComboBox({ options, selectedValue = 0 }: ComboBoxProps) {
-  const defaultValue = options[selectedValue].value
+  const value = options[selectedValue].value as SelectValues
+  const defaultValue = { value, id: selectedValue }
 
-  const [selectedContest, setSelectedContest] = useState<SelectValues>(
-    defaultValue as SelectValues
-  )
+  const [selectedContest, setSelectedContest] = useState(defaultValue)
   const { changeSelectedContest } = useContext(SelectedContestContext)
 
   function handleContestChange(event: ChangeEvent<HTMLSelectElement>) {
@@ -21,8 +20,9 @@ export function ComboBox({ options, selectedValue = 0 }: ComboBoxProps) {
       return { value: attributes[0].textContent, id: index }
     })
 
-    const findValueAndId = valuesAndIds.find(element => element.value === event.target.value)
-    setSelectedContest({ ...findValueAndId })
+    const findValueAndId = valuesAndIds.find(element => element.value === event.target.value) as unknown as ValueAndID
+    const existsValueAndId = findValueAndId?.value && findValueAndId?.id > -1
+    if(existsValueAndId) setSelectedContest({ ...findValueAndId })
   }
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export function ComboBox({ options, selectedValue = 0 }: ComboBoxProps) {
   }, [selectedContest])
 
   return (
-    <Select defaultValue={defaultValue} onChange={handleContestChange}>
+    <Select defaultValue={defaultValue.value} onChange={handleContestChange}>
       <For
         of={options}
         render={(item, index) => {
