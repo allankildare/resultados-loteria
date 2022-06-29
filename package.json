@@ -6,7 +6,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "lint:eslint": "eslint . --ext js,.ts",
+    "lint:tsc": "tsc",
+    "lint:prettier": "prettier . --check"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.25",
