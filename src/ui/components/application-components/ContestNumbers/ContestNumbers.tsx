@@ -44,7 +44,6 @@ export function ContestNumbers({ ids }: ContestNumbersProps) {
   }, [contestId, contestDate])
 
   return (
-    <>
       <ContestBox>
         <div className="numbers">
           <Choose>
@@ -71,6 +70,5 @@ export function ContestNumbers({ ids }: ContestNumbersProps) {
           a CAIXA
         </p>
       </ContestBox>
-    </>
   )
 }
