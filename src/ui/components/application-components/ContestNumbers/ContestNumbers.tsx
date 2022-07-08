@@ -2,18 +2,20 @@ import { useContext, useEffect } from 'react'
 import { Choose, For } from 'react-extras'
 import { SelectedContestContext } from '~/contexts'
 import { getContest } from '~/services'
-import { ContestBox } from './styles'
+import { ContestBox, Disclaimer } from './styles'
 import { NumberBox } from './../NumberBox'
 import { ApplicationLoading } from './../ApplicationLoading'
 import { IdItem } from '~/types'
 import { AlertText } from './../AlertText/AlertText'
+import { Flex } from '../../layout-components'
 
 export interface ContestNumbersProps {
   ids: IdItem[]
 }
 
 export function ContestNumbers({ ids }: ContestNumbersProps) {
-  const { selectedId, setSelectedContestId, setSelectedContestDate } = useContext(SelectedContestContext)
+  const { selectedId, setSelectedContestId, setSelectedContestDate } =
+    useContext(SelectedContestContext)
 
   const selectedContestId = ids.find(
     item => item.loteriaId === selectedId
@@ -44,6 +46,7 @@ export function ContestNumbers({ ids }: ContestNumbersProps) {
   }, [contestId, contestDate])
 
   return (
+    <Flex flexDirection="column">
       <ContestBox>
         <div className="numbers">
           <Choose>
@@ -65,10 +68,13 @@ export function ContestNumbers({ ids }: ContestNumbersProps) {
             </Choose.When>
           </Choose>
         </div>
-        <p style={{ textAlign: 'center' }}>
+      </ContestBox>
+      <Disclaimer>
+        <p>
           Este sorteio é meramente ilustrativo e não possui nenhuma ligação com
           a CAIXA
         </p>
-      </ContestBox>
+      </Disclaimer>
+    </Flex>
   )
 }
