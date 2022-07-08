@@ -4,7 +4,7 @@ import { ComponentType } from 'react'
 
 interface FlexProps extends CSS.Properties {
     as?: string | ComponentType<any>
-    children: JSX.Element
+    children: any
 }
 
 export function Flex(props: FlexProps) {
