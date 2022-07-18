@@ -9,6 +9,9 @@ Teste técnico feito para a Brainn Co
 ![Testing-Library](https://img.shields.io/badge/-Testing%20Library-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
+<div align="center">
+    <img src="./src/ui/assets/images/print_resultados_loteria.png" alt="Captura de tela da aplicação Resultados de Loteria" width="500px" />
+</div>
 
 Esta aplicação exibe os resultados de concursos fictícios das Loterias Caixa aqui do Brasil. Nela você terá a oportunidade de navegar entre os resultados e ter uma resposta visual das mudanças.
 Todos os dados vem de uma API hospedada pelo Heroku da própria Brainn Co, apenas fiz a consultas aos _endpoints_.
